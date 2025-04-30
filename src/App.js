@@ -1,14 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginScreen from "./screens/loginScreens";
-import StockScreen from "./screens/stockScreens";
+import HomeScreen from "./screens/homeScreens";
+import StockScreen from "./screens/stockScreens"; // Import StockScreen if needed
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LoginScreen />} />
-        <Route path="/stock" element={<StockScreen />} />
+        <Route path="/stock" element={<HomeScreen />} />
+        <Route path="/stock-barang" element={<StockScreen />} />
       </Routes>
     </Router>
   );
