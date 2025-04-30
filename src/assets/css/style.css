@@ -1,0 +1,89 @@
+/* Label styling */
+label {
+    font-size: 16px;
+    color: #020202;
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+  
+  /* Input styling */
+  input {
+    background-color: #ffffff; /* Warna putih untuk kotak input */
+    border-width: 1px;
+    border-color: #e5e5e5;
+    border-radius: 8px;
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan */
+  }
+  
+  /* Loading container styling */
+  .loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #02cf8e;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Button styling */
+  .button {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 50px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    opacity: 0.9;
+  }
+  
+  .button-icon {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #394e82;
+  }
+  
+  .button-icon:hover svg {
+    fill: #2c3e50;
+  }
