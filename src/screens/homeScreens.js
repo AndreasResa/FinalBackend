@@ -7,9 +7,10 @@ const HomeScreen = () => {
   const token = location.state?.token;
 
   useEffect(() => {
-    if (!token) {
-      // Jika tidak ada token, redirect ke halaman login
-      navigate("/");
+    if (token) {
+      localStorage.setItem("token", token); // Simpan token di localStorage
+    } else {
+      navigate("/"); // Redirect jika token tidak ada
     }
   }, [token, navigate]);
 
@@ -17,26 +18,31 @@ const HomeScreen = () => {
     return null; // Jangan render apa pun jika token tidak ada
   }
 
-  return (
-    <div className="home-container">
-      <h1 className="home-title">Stock Screen</h1>
-      <p>Welcome! Your token is: {token}</p>
-      <button
-        className="logout-button"
-        onClick={() => navigate("/")}
-        aria-label="Logout"
-      >
+return (
+  <div className="home-container">
+    <h1 className="home-title">Inventory Dashboard</h1>
+
+    <div className="welcome-message">
+      <p>Welcome to Inventory Management System</p>
+      <div className="token-display">Access Token: {token}</div>
+    </div>
+
+    <div className="action-buttons">
+      <button className="logout-button" onClick={() => navigate("/")}>
+        <span className="button-icon">🚪</span>
         Logout
       </button>
+
       <button
         className="stock-button"
-        onClick={() => navigate("/stock-barang")}
-        aria-label="Go to Stock Barang"
+        onClick={() => navigate("/stock-barang", { state: { token } })}
       >
-        Go to Stock Barang
+        <span className="button-icon">📦</span>
+        Manage Inventory
       </button>
     </div>
-  );
+  </div>
+);
 };
 
 export default HomeScreen;

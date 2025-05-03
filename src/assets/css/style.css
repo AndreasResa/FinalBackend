@@ -1,262 +1,583 @@
-/* Label styling */
-label {
-    font-size: 16px;
-    color: #020202;
-    padding-left: 55px;
-    padding-right: 55px;
-  }
-  
-  /* Input styling */
-  input {
-    background-color: #ffffff; /* Warna putih untuk kotak input */
-    border-width: 1px;
-    border-color: #e5e5e5;
-    border-radius: 8px;
-    padding: 10px;
-    margin-left: 50px;
-    margin-right: 50px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan */
-  }
-  
-  /* Loading container styling */
-  .loading-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-  
-  .loading-spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #02cf8e;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  /* Button styling */
-  .button {
-    border: none;
-    border-radius: 8px;
-    padding: 12px 20px;
-    font-size: 14px;
-    font-family: Arial, sans-serif;
-    cursor: pointer;
-    text-align: center;
-    margin: 0 50px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    opacity: 0.9;
-  }
-  
-  .button-icon {
-    width: 50px;
-    height: 50px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .button-icon svg {
-    width: 24px;
-    height: 24px;
-    fill: #394e82;
-  }
-  
-  .button-icon:hover svg {
-    fill: #2c3e50;
-  }
+/*  */
 
-  .login-container, .stock-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  .login-title, .stock-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .login-input {
-    width: 100%;
-    max-width: 300px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .login-button, .logout-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .login-button:hover, .logout-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .loading {
-    font-size: 16px;
-    color: #555;
-  }
-  /* Container styling */
-.stock-container {
-  padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
 
-/* Title styling */
-.stock-title {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
+/* LOGIN PAGE */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f4f7fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
   color: #333;
 }
 
-/* List styling */
-.stock-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Item styling */
-.stock-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-  margin-bottom: 10px;
-  background-color: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 5px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-/* Name styling */
-.stock-name {
-  font-size: 16px;
-  font-weight: 500;
-  color: #394e82;
-}
-
-/* Quantity styling */
-.stock-quantity {
-  font-size: 14px;
-  color: #666;
-}
-
-.back-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-family: Arial, sans-serif;
-  color: #ffffff;
-  background-color: #394e82;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.back-button:hover {
-  background-color: #2c3e50;
-}
-
-/* Container styling */
-.home-container {
-  padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+/* Container Login */
+.login-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 380px;
   text-align: center;
+  margin: 20px;
 }
 
-/* Title styling */
-.home-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #394e82;
+/* Title Styling */
+.login-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
   margin-bottom: 20px;
 }
 
-/* Paragraph styling */
-.home-container p {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-/* Logout button styling */
-.logout-button {
-  margin-top: 10px;
-  padding: 10px 20px;
+/* Label Styling */
+label {
   font-size: 14px;
-  font-family: Arial, sans-serif;
-  color: #ffffff;
-  background-color: #e74c3c;
+  color: #444;
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  padding-left: 10px;
+}
+
+/* Input Styling */
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Button Styling */
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #1066a0;
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Loading Spinner Styling */
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+  }
+  .login-title {
+    font-size: 1.8rem;
+  }
+  input {
+    font-size: 14px;
+    padding: 10px;
+  }
+  button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  
+}
+
+/* Home Screen Styles */
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.home-title {
+  color: #2d4059;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.home-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: #ff6b6b;
+}
+
+.welcome-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.token-display {
+  font-family: 'Courier New', monospace;
+  background: #f8f9fa;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #e74c3c;
+  margin: 1rem 0;
+  display: inline-block;
+  border: 1px solid #eee;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.logout-button,
+.stock-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logout-button {
+  background: #ff6b6b;
+  color: white;
 }
 
 .logout-button:hover {
-  background-color: #c0392b;
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255,107,107,0.3);
 }
 
-/* Stock button styling */
 .stock-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-family: Arial, sans-serif;
-  color: #ffffff;
-  background-color: #3498db;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  background: #3498db;
+  color: white;
 }
 
 .stock-button:hover {
-  background-color: #2980b9;
+  background: #0f5481;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(10, 109, 215, 0.3);
 }
+
+/* Icon styling */
+.button-icon {
+  font-size: 1.3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+  
+  .home-title {
+    font-size: 2rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logout-button,
+  .stock-button {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+
+/* STOCK SCREENS STYLING*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap');
+
+.stock-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+.stock-title {
+  font-size: 3rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.stock-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stock-table thead {
+  background-color: #3498db;
+  color: white;
+}
+
+.stock-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.stock-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #ecf0f1;
+  color: #2c3e50;
+}
+
+.stock-table tr:last-child td {
+  border-bottom: none;
+}
+
+.stock-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.stock-table button {
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.stock-table button:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stock-container {
+    padding: 1rem;
+  }
+  
+  .stock-table th,
+  .stock-table td {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .stock-table button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stock-title {
+    font-size: 1.5rem;
+  }
+  
+  .stock-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+
+/* StockDetails.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap');
+/* Stock Container */
+.stock-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Header Section */
+.header-section {
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #f0f2f5;
+}
+
+.stock-title {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+/* Table Styling */
+.stock-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.stock-table thead {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stock-table th {
+  padding: 1.2rem;
+  text-align: left;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.stock-table td {
+  padding: 1.2rem;
+  color: #2c3e50;
+  border-bottom: 1px solid #f8f9fa;
+  transition: all 0.2s ease;
+}
+
+.stock-table tr:not(:last-child) td {
+  border-bottom: 1px solid #eceff1;
+}
+
+.stock-table tr:hover td {
+  background-color: #f8f9fa;
+  transform: scale(1.02);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Edit Button */
+.edit-button {
+  background-color: #e8f4fc;
+  color: #3498db;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.edit-button:hover {
+  background-color: #3498db;
+  color: white;
+  box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+}
+
+.edit-button::before {
+  content: "✏";
+  filter: grayscale(100%) brightness(40%);
+  transition: filter 0.3s ease;
+}
+
+.edit-button:hover::before {
+  filter: none;
+}
+
+/* Price Styling */
+.stock-table td:nth-child(4) {
+  color: #27ae60;
+  font-weight: 500;
+}
+
+/* Stock Quantity Styling */
+.stock-table td:nth-child(3) {
+  font-weight: 500;
+  color: #e67e22;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stock-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  .stock-table th,
+  .stock-table td {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .edit-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .stock-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stock-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .stock-table th {
+    font-size: 0.8rem;
+  }
+}
+
+/* Styling Teks DAFTAR STOK BARANG */
+.stock-title {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin: 2rem 0;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Garis dekoratif bawah */
+.stock-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #3498db 50%, transparent 100%);
+  border-radius: 2px;
+}
+
+/* Efek hover */
+.stock-title:hover {
+  transform: scale(1.02);
+  text-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stock-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  
+  .stock-title::after {
+    width: 80px;
+  }
+}
+
+/* Tombol Kembali */
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #394e82;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+.back-button:hover {
+  background-color: #2f3e6e;
+}
+
+/* Tambahkan di bagian atas CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
